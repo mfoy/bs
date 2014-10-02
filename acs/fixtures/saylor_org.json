@@ -1,0 +1,77 @@
+{
+    "name": "saylor_org",
+    "production_ready": true,
+    "created": "2014-07-16T19:20:30+01:00",
+    "updated": "2014-07-17T12:43:38+01:00",
+    "institution_url": "http://www.saylor.org",
+    "institution_name": "saylor.org Academy",
+    "config": [
+        {
+            "type": "COURSE_LIST",
+            "value": "http://eportfolio.saylor.org/course-catalog",
+            "regex": false,
+            "fixture": true,
+            "notes": "Notes go here"
+        },
+        {
+            "type": "COURSE_LIST_PATTERN",
+            "value": "http://eportfolio.saylor.org/course-catalog\\?page=[\\d]+",
+            "regex": true,
+            "fixture": false
+        },
+        {
+            "type": "COURSE_LIST",
+            "value": "http://eportfolio.saylor.org/course-catalog?page=2",
+            "regex": false,
+            "fixture": true
+        },
+        {
+            "type": "COURSE",
+            "value": "http://www.saylor.org/courses/[\\w\\d]+/",
+            "regex": true,
+            "fixture": false
+        },
+        {
+            "type": "COURSE",
+            "value": "http://www.saylor.org/courses/bio101a/",
+            "regex": false,
+            "fixture": true
+        }
+    ],
+    "description_loader": {
+        "type": "xpath",
+        "args": [
+            {
+                "description_xpaths": ["//div/div/div"]
+            }
+        ]
+    },
+    "footer_loader": {
+        "type": "element",
+        "args": []
+    },
+    "format_loader": {
+        "type": "online",
+        "args": []
+    },
+    "header_loader": {
+        "type": "css",
+        "args": []
+    },
+    "nav_loader": {
+        "type": "element",
+        "args": []
+    },
+    "price_loader": {
+        "type": "free",
+        "args": []
+    },
+    "title_loader": {
+        "type": "h2",
+        "args": []
+    },
+    "schedule_loader": {
+        "type": "anytime",
+        "args": []
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "name": "infiniteskills_com",
+    "production_ready": true,
+    "created": "2014-07-16T19:20:30+01:00",
+    "updated": "2014-07-17T12:43:38+01:00",
+    "institution_url": "http://www.infiniteskills.com",
+    "institution_name": "Infinite Skills",
+    "config": [
+        {
+            "type": "CATEGORY_LIST",
+            "value": "http://www.infiniteskills.com/training/categories.html",
+            "regex": false,
+            "fixture": true,
+            "notes": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "type": "COURSE_LIST_PATTERN",
+            "value": "http://www.infiniteskills.com/[\\w-]+-training/",
+            "regex": true,
+            "fixture": false
+        },
+        {
+            "type": "COURSE_LIST",
+            "value": "http://www.infiniteskills.com/audio-editing-training/",
+            "regex": false,
+            "fixture": true
+        },
+        {
+            "type": "COURSE",
+            "value": "http://www.infiniteskills.com/training/[\\w-]+.html",
+            "regex": true,
+            "fixture": false
+        },
+        {
+            "type": "COURSE",
+            "value": "http://www.infiniteskills.com/training/learning-apple-logic-pro-x.html",
+            "regex": false,
+            "fixture": true
+        }
+    ],
+    "description_loader": {
+        "type": "xpath",
+        "args": [
+            {
+                "description_xpaths": ["//div/div/div"]
+            }
+        ]
+    },
+    "footer_loader": {
+        "type": "element",
+        "args": []
+    },
+    "format_loader": {
+        "type": "online",
+        "args": []
+    },
+    "header_loader": {
+        "type": "css",
+        "args": []
+    },
+    "nav_loader": {
+        "type": "element",
+        "args": []
+    },
+    "price_loader": {
+        "type": "free",
+        "args": []
+    },
+    "title_loader": {
+        "type": "h2",
+        "args": []
+    },
+    "schedule_loader": {
+        "type": "anytime",
+        "args": []
+    }
+}
