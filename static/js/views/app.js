@@ -22,6 +22,7 @@ define([
       this.listenTo(this.configurationSelectionCollection, 'sync', this.syncConfigurationSelections);
       this.configurationSelectionCollection.fetch();
       this.render();
+      $("#iframe").attr('width', $("#iframe").parent().width());
     },
 
     render: function () {

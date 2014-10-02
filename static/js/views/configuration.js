@@ -14,7 +14,8 @@ define([
 
     events: {
       'click .editable': 'editField',
-      'click .remove': 'removeRow'
+      'click .remove': 'removeRow',
+      'click .url': 'loadUrl'
     },
 
     initialize: function(){
@@ -36,6 +37,11 @@ define([
       e.preventDefault();
       $(e.target).parents('tr').fadeOut();
       // TODO - update model
+    },
+
+    loadUrl: function(e){
+      e.preventDefault();
+      $('#iframe').attr('src', $(e.target).attr('data-url'));
     }
 
   });

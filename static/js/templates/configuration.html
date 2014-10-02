@@ -55,7 +55,13 @@
     <tbody>
       <% _.each(config, function(c){ %>
         <tr>
-          <td><%- c['value'] %></td>
+          <td>
+            <% if(!c['regex']){ %>
+              <a class="url pointer" data-url="<%- c['value'] %>"><%- c['value'] %></a>
+            <% } else { %>
+              <%- c['value'] %>
+            <% } %>
+          </td>
           <td><%- c['type'] %></td>
           <td class="text-center">
             <span class="text-<%= c['regex'] ? 'success' : 'danger' %> glyphicon glyphicon-<%= c['regex'] ? 'ok' : 'remove' %>"></span>
