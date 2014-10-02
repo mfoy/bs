@@ -1,0 +1,5 @@
+flask==0.10
+flask-restful==0.2.12
+requests==2.4.1
+selenium==2.43.0
+uwsgi==2.0.7
