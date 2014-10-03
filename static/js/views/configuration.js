@@ -2,8 +2,10 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'models/iframe',
+  'views/iframe',
   'text!templates/configuration.html'
-], function ($, _, Backbone, ConfigurationTemplate) {
+], function ($, _, Backbone, Iframe, IframeView, ConfigurationTemplate) {
   'use strict';
 
   var ConfigurationView = Backbone.View.extend({
@@ -18,7 +20,8 @@ define([
       'click .url': 'loadUrl'
     },
 
-    initialize: function(){
+    initialize: function(args){
+      _.extend(this, args);
       this.listenTo(this.model, 'change', this.render);
     },
 
@@ -41,7 +44,9 @@ define([
 
     loadUrl: function(e){
       e.preventDefault();
-      $('#iframe').attr('src', $(e.target).attr('data-url'));
+      console.log('data-url', $(e.target).attr('data-url'));
+      this.iframe.set({src: $(e.target).attr('data-url')});
+      // $('#iframe').attr('src', $(e.target).attr('data-url'));
     }
 
   });

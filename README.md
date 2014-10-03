@@ -27,7 +27,7 @@ fab flask
 Open Chrome with security disabled (required for cross-domain access of iframe contents), e.g. on OSX:
 
 ```bash
-open /Applications/Google\ Chrome.app --args  --disable-web-security
+open /Applications/Google\ Chrome.app --args --disable-web-security
 ```
 
 Navigate to `http://10.0.5.2:5000`

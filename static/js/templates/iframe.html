@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">URL</span>
+          <input type="text" size="70" class="form-control" id="" value="<%- src %>">
+        </div>
+        <a href="#reloadURL" class="glyphicon glyphicon-refresh"></a>
+        <a href="#addToConfiguration" class="glyphicon glyphicon-plus"></a>
+        <div class="input-group">
+          <span class="input-group-addon">XPath</span>
+          <input id="xpath-expression" class="form-control" type="text">
+          <span class="input-group-btn">
+            <button id="evaluate-xpath" class="btn btn-default" type="button">Evaluate</button>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <iframe id="iframe" src="<%- src %>" height="700" frameBorder="0"></iframe>
+  <div class="panel-footer">
+    <span>footer here</span>
+  </div>
+</div>

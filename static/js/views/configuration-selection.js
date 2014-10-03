@@ -3,8 +3,10 @@ define([
   'underscore',
   'backbone',
   'text!templates/configuration-selection.html',
-  'views/configuration'
-], function ($, _, Backbone, ConfigurationSelectionTemplate, ConfigurationView) {
+  'views/configuration',
+  'models/iframe',
+  'views/iframe'
+], function ($, _, Backbone, ConfigurationSelectionTemplate, ConfigurationView, Iframe, IframeView) {
   'use strict';
 
   var ConfigurationSelectionView = Backbone.View.extend({
@@ -17,7 +19,8 @@ define([
       "click": "loadConfiguration"
     },
 
-    initialize: function(){
+    initialize: function(args){
+      this.iframe = new Iframe({src: this.model.get('institution_url')});
       this.listenTo(this.model, 'change', this.render);
     },
 
@@ -28,13 +31,21 @@ define([
 
     loadConfiguration: function(e){
       e.preventDefault();
-      var view = new ConfigurationView({model:this.model});
+      console.log(this.model, this.iframe);
+      var view = new ConfigurationView({
+        model: this.model,
+        iframe: this.iframe
+      });
       $('#spider-configuration').html(view.render().el);
       $('.editable').editable({
         toggle: 'manual',
         placement: 'right',
         showbuttons: false
       });
+
+      view = new IframeView({model: this.iframe});
+      $('#iframe-panel').append(view.render().el);
+      view.resize();
     }
 
   });
